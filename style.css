@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,600');
+
+:root {
+    --poppins: 'Poppins', sans-serif;
+    --super-light: #F4F6F7;	
+    --grey-light: #E0e4e4;
+    --grey-medium: #727476;	
+    --grey-dark: #404040;
+}
+
+body {
+    font-family: var(--poppins);
+    font-weight: 300;
+    background: var(--grey-light);
+}
+
+.container {
+    margin: 70px auto;
+    padding: 0 10px;
+    width: 80%;
+    overflow-y: scroll;
+    max-height: 700px;
+    max-width: 1300px;
+}
+
+.text-center { text-align: center;}
+/* Table Styling */
+table {
+    color: var(--grey-dark);
+    width: 100%;
+    border-radius: 5px;
+}
+table td, table th {
+    padding: .5rem;
+}
+table td:not(:nth-child(6n)) {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+table tr:last-child {
+    background-color: rgba(255,255,255,0.15);
+}
+table td i#pass {
+    color: green;
+}
+table td i#fail {
+    color: red;
+}
+table tr {
+    position: relative;
+}
+
+table th {
+    font-size: 16px;
+    background-color: #55608f;
+    color: white;
+}
+table tr .delete {
+    background: none !important;
+    width: 10px;
+    position: relative;
+}
+table tr:hover .delete i {
+    display: block;
+}
+table tr .delete i {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 30%;
+    transform: translate(0%,-50%);
+    color: red;
+    font-size: 15px;
+}
+table .submit input {
+    width: 100%;
+    padding: 8px;
+    margin-left: -8px;
+    padding-right: 3px;
+    font-size: 16px;
+    color: var(--grey-medium);
+    background: none;
+    border: none;
+}
+
+table .submit input::placeholder {
+    color: var(--grey-medium);
+}
+
+table .submit input:focus {
+    outline: none;
+    border-width: 1px;
+}
+
+table .submit button {
+    padding: 3px 10px;
+    background: white;
+    border: 1px solid var(--grey-dark);
+}
+
+
+
+/* Scrollbar Styling */
+.container::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 20px;
+  border-radius: none;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, .2);
+  box-shadow: 0 0 1px rgba(255, 255, 255, .8);
+}
+
+@media only screen and (max-width: 700px) {
+    .container {
+        width: 100%;
+        padding: 0;
+    }
+    table td, table th {
+        padding: 3px;
+        font-size: 12px;
+    }
+}

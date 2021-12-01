@@ -1,32 +1,15 @@
-/* Create a function to add student data to an array as an array of 
-objects and render objects to the page
+import Student from './Student.js'
+import Table from './Table.js'
 
-Be sure your function parameters are given strict types
+// Dummy data
+const andrew:Student = new Student('Andrew', 'Jackson', 'History', 65)
+const george:Student = new Student('George', 'Washington', 'Computer Science', 52)
+const john:Student = new Student('John', 'Adams', 'Biology', 98)
+const james:Student = new Student('James', 'Madison', 'History', 83)
+const martin:Student = new Student('Martin', 'Van Buren', 'Physics', 91)
+const william:Student = new Student('William', 'Harrison', 'Biology', 73)
+const zachary:Student = new Student('Zachary', 'Taylor', 'English', 52)
 
-*/
+const table:Table = new Table(document.querySelector('#table'),new Array(andrew, george, john, james, martin, william, zachary))
 
-/* Define your data structure using a custom Type.
-https://www.digitalocean.com/community/tutorials/how-to-create-custom-types-in-typescript
-
-Student
-    First name (string)
-    Last name (string)
-    Course  (string)
-    Grade (number or string)
-    isPassing (boolean value if grade is greater than a D)
-
-    If student is passing, render a green symbol/icon next to their entry in the table
-    If student is not passing, render a red symbol/icon next to their entry in the table
-
-    It is up to you to calculate based on grade (numerical or letter) if student is passing or not
-
-
-    Data should be rendered in the form of a table, i.e.,
-
-    |First Name|Last Name|Course|Grade (as Letter)|Passing?|
-    | Leon     |Kennedy  |RE-101|  B              |   :)   |
-
-
-    Add a button that sorts the data based on Grade (ascending order)
-    Add a button that sorts teh data based on Course (ascending order)
-*/
+table.render()
